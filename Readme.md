@@ -27,8 +27,8 @@ Adaptive-Dual-Contouring-over-Uniform-Leaf is a C++ project that implements the 
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/OctreeDualContouring.git
-   cd OctreeDualContouring/octree
+   git clone https://github.com/gh repo clone Dhruv-Sharma01/Adaptive-Dual-Contouring-over-Uniform-Leaf
+   cd Adaptive-Dual-Contouring-over-Uniform-Leaf/
    ```
 
 2. **Create a Build Directory:**
