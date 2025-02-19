@@ -56,20 +56,15 @@ Vec3 Vec3::determinant(const std::vector<Vec3>& A) {
     for (const auto& vec : A) {\n        // Placeholder: for each vector, multiply by its x component\n        result = result + (vec * vec.x);\n    }\n    return result;\n}
 
 // Static function: placeholder for component-wise dot product across lists
-Vec3 Vec3::dot(const std::vector<Vec3>& A, const std::vector<Vec3>& B) {\n    Vec3 result(0, 0, 0);\n    size_t n = A.size();\n    for (size_t i = 0; i < n; ++i) {\n        result = result + (A[i] * B[i].x); // Placeholder implementation\n    }\n    return result;\n}\n\n// Print function\nvoid Vec3::print() const {\n    std::cout << \"(\" << x << \", \" << y << \", \" << z << \")\" << std::endl;\n}\nEOF
-
-###############################
-# Create header: include/generation.h
-###############################
-cat << 'EOF' > "$PROJECT_ROOT/include/generation.h"
-#ifndef GENERATION_H
-#define GENERATION_H
-
-#include "vec3.h"
-
-namespace generation {
-    float sphere(Vec3 p);
-    Vec3 sphere_gradient(Vec3 p);
+Vec3 Vec3::dot(const std::vector<Vec3>& A, const std::vector<Vec3>& B) {
+Vec3 result(0, 0, 0);
+size_t n = A.size();
+for (size_t i = 0; i < n; ++i) {
+result = result + (A[i] * B[i].x); // Placeholder implementation
 }
-
-#endif // GENERATION_H
+        return result;
+        }
+// Print function
+void Vec3::print() const {
+std::cout << \"(\" << x << \", \" << y << \", \" << z << \")\" << std::endl;
+}
