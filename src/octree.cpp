@@ -113,26 +113,22 @@ void Cell::place(bool qr) {
             Eigen::Vector3f x_vec = A_mat.jacobiSvd(Eigen::ComputeThinU | Eigen::ComputeThinV).solve(d_vec);
             vertex = Vec3(x_vec(0), x_vec(1), x_vec(2));
         }
-    } else {\n        for (int i = 0; i < 8; i++) {\n            if (children[i]) children[i]->place(qr);\n        }\n    }\n}\n\n// Octree Class\nOctree::Octree(float (*gen)(float, float, float)) {\n    generator = gen;\n    root = new Cell(0.0, 0.0, 0.0, 2.0, generator);\n    root->isLeaf = true;\n    root->recursiveSplit(0.1);\n}\n\nvoid Octree::print() const {\n    std::cout << \"Root cell at (\" << root->x << \", \" << root->y << \", \" << root->z << \") with halfsize \" << root->halfsize << std::endl;\n    root->printCells();\n}\n\nvoid Octree::placeVertex() {\n    root->place();\n}\n\n} // namespace octree\n\nint main() {\n    octree::Octree tree(myGenerator);\n    tree.print();\n    tree.placeVertex();\n    return 0;\n}\nEOF
-
-echo "Created src/octree.cpp"
-
-###############################
-# Create source: src/main.cpp
-###############################
-cat << 'EOF' > "$PROJECT_ROOT/src/main.cpp"
-#include <iostream>
-#include "octree.h"
-#include "generation.h"
-
-using namespace std;
-using namespace octree;
-using myGenerator = generation::sphere;
-
-int main() {
-    // Create the octree using the sphere function as the generator
-    Octree tree(myGenerator);
-    tree.print();
-    tree.placeVertex();
-    return 0;
-}
+    } else {\n        for (int i = 0; i < 8; i++) {
+        if (children[i]) children[i]->place(qr);
+    }
+            }
+    }
+// Octree Class
+Octree::Octree(float (*gen)(float, float, float)) {
+    generator = gen;
+    root = new Cell(0.0, 0.0, 0.0, 2.0, generator);
+    root->isLeaf = true;\n    root->recursiveSplit(0.1);
+    }
+void Octree::print() const {
+std::cout << \"Root cell at (\" << root->x << \", \" << root->y << \", \" << root->z << \") with halfsize \" << root->halfsize << std::endl;
+root->printCells();
+    }
+void Octree::placeVertex() {
+    root->place();
+    }
+} // namespace octree\n\nint main() {\n    octree::Octree tree(myGenerator);\n    tree.print();\n    tree.placeVertex();\n    return 0;\n}\nEOF
