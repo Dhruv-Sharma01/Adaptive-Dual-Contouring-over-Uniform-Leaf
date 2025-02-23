@@ -5,7 +5,7 @@
 
 namespace functions {
     Vec3 intersections(const Vec3& p1, const Vec3& p2, float v1, float v2);
-    vector<vector<vec3>> triangulate(octree::cell_edge);
+    vector<vector<vec3>> triangulate();
 }
 
 #endif // FUNCTIONS_H
