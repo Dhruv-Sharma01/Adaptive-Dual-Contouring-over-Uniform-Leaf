@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
-#include "octree.h"  // Adjust the path as necessary
-
+#include "octree.h"  
 // Test case for the Octree class
 TEST(OctreeTest, Initialization) {
     // Create an instance of the Octree
@@ -11,4 +10,3 @@ TEST(OctreeTest, Initialization) {
     EXPECT_TRUE(octree.isEmpty());
 }
 
-// Additional test cases...
