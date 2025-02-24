@@ -1,16 +1,13 @@
 cmake_minimum_required(VERSION 3.10)
-project(OctreeProject)
+project(AdaptiveDualContouring)
 
+# Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
 
-# Include directories for header files
-include_directories(${PROJECT_SOURCE_DIR}/include)
+# Add include directories
+include_directories(include)
 
-# Find Eigen3 package and include its directories
-find_package(Eigen3 REQUIRED)
-include_directories(${EIGEN3_INCLUDE_DIR})
-
-# List of source files
+# Add source files
 set(SOURCES
     src/vec3.cpp
     src/generation.cpp
@@ -19,7 +16,25 @@ set(SOURCES
     src/octree.cpp
 )
 
-# Create the executable target
+# Add the executable
 add_executable(octree ${SOURCES})
 
-# Link any additional libraries here if needed
+# Enable testing
+enable_testing()
+
+# Add Google Test
+add_subdirectory(/path/to/googletest ${CMAKE_BINARY_DIR}/googletest)
+
+# Add test source files
+set(TEST_SOURCES
+    tests/test_octree.cpp
+)
+
+# Create test executable
+add_executable(runTests ${TEST_SOURCES} ${SOURCES})
+
+# Link test executable with Google Test libraries
+target_link_libraries(runTests gtest gtest_main)
+
+# Add tests
+add_test(NAME OctreeTests COMMAND runTests)
