@@ -15,12 +15,6 @@ This repository contains an implementation of the Adaptive Dual Contouring algor
 
 The algorithm successfully generates high-quality meshes for various implicit surfaces:
 
-### Comparison of Generated Shapes
-
-![All Shapes Comparison](images/all_shapes_comparison.png)
-
-### Individual Shape Results
-
 #### Sphere
 - **Vertices**: 1,160
 - **Triangles**: 768
@@ -28,22 +22,6 @@ The algorithm successfully generates high-quality meshes for various implicit su
 
 ![Sphere Surface](images/sphere_surface.png)
 ![Sphere Multiple Views](images/sphere_multiple_views.png)
-
-#### Cube
-- **Vertices**: 1,016
-- **Triangles**: 676
-- **Bounds**: [-0.862, 0.862] in all dimensions
-
-![Cube Surface](images/cube_surface.png)
-![Cube Multiple Views](images/cube_multiple_views.png)
-
-#### Gyroid (Complex Periodic Surface)
-- **Vertices**: 6,568
-- **Triangles**: 4,108
-- **Bounds**: X: [-10.686, 10.691], Y: [-6.636, 6.640], Z: [-6.861, 6.866]
-
-![Gyroid Surface](images/gyroid_surface.png)
-![Gyroid Multiple Views](images/gyroid_multiple_views.png)
 
 ## Algorithm Overview
 
