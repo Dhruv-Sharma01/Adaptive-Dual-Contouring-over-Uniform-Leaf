@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <string>
 #include "vec3.h"
 #include "tables.h"
 #include "generation.h"
@@ -29,7 +30,7 @@ public:
 };
 
 extern std::unordered_map<Vec3, Cell*> cell_id;
-extern std::unordered_map<std::vector<Vec3>, std::vector<Cell*>> cell_edge;
+extern std::unordered_map<std::string, std::vector<Cell*>> cell_edge;
 
 class Octree {
 public:
