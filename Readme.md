@@ -57,15 +57,6 @@ The algorithm supports multiple shape types:
 ```bash
 # Generate sphere (default)
 ./octree 0
-
-# Generate torus
-./octree 1
-
-# Generate cube
-./octree 2
-
-# Generate gyroid
-./octree 3
 ```
 
 Each run generates:
@@ -130,11 +121,7 @@ The algorithm supports multiple implicit surface definitions:
 │   ├── generation.h        # Implicit function declarations
 │   ├── functions.h         # Utility function declarations
 │   └── tables.h            # Lookup tables for dual contouring
-├── build/
-│   ├── octree              # Compiled executable
-│   ├── *.obj               # Generated mesh files
-│   ├── visualize_mesh.py   # Python visualization script
-│   └── results/            # Generated visualization images
+├── visualize_mesh.py   # Python visualization script
 ├── images/                 # Result images for documentation
 └── CMakeLists.txt          # Build configuration
 ```
